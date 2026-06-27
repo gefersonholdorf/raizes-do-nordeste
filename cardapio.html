@@ -1,71 +1,89 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Cardápio</title>
-    <script src="js/mock.js"></script>
-    <script src="js/cardapio.js"></script>
+<title>Cardápio</title>
 
-    <link rel="stylesheet" href="css/variables.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
-    <header>
+<header>
 
-        <div class="container">
+<div class="topo">
 
-            <div class="logo">
+<div>
 
-                🌽 Raízes do Nordeste
+<h1>🌽 Raízes do Nordeste</h1>
 
-            </div>
+<p>Sabores da nossa terra</p>
 
-        </div>
+</div>
 
-    </header>
+<div class="badge">
 
-    <div class="container">
+🛒 <span id="qtdCarrinho">0</span>
 
-        <h2>
+</div>
 
-            Nosso Cardápio
+</div>
 
-        </h2>
+</header>
 
-        <br>
+<div class="container">
 
-        <input id="buscar" placeholder="Pesquisar produto">
+<input
+id="buscar"
+placeholder="🔍 Buscar produto">
 
-        <br><br>
+<div class="categorias">
 
-        <div class="grid" id="produtos">
+<button class="cat ativo">Todos</button>
 
-        </div>
+<button class="cat">Tapiocas</button>
 
-    </div>
+<button class="cat">Cuscuz</button>
 
-    <nav>
+<button class="cat">Bebidas</button>
 
-        <a href="cardapio.html">🍽</a>
+<button class="cat">Sobremesas</button>
 
-        <a href="carrinho.html">🛒</a>
+</div>
 
-        <a href="fidelidade.html">⭐</a>
+<div id="produtos" class="produtos-grid">
 
-        <a href="perfil.html">👤</a>
+</div>
 
-    </nav>
+</div>
 
-    <script src="js/cardapio.js"></script>
+<nav class="bottom-nav">
+
+<a class="ativo" href="cardapio.html">🍔</a>
+
+<a href="carrinho.html">🛒</a>
+
+<a href="pedido.html">📦</a>
+
+<a href="fidelidade.html">⭐</a>
+
+<a href="perfil.html">👤</a>
+
+</nav>
+
+<script src="js/mock.js"></script>
+
+<script src="js/cardapio.js"></script>
 
 </body>
 

@@ -1,56 +1,90 @@
-const unidades = [
+const unidades=[
 
 {
+
 id:1,
+
 nome:"Recife Centro",
-cidade:"Recife"
+
+tempo:"15 minutos",
+
+endereco:"Centro"
+
 },
 
 {
+
 id:2,
+
 nome:"Boa Viagem",
-cidade:"Recife"
+
+tempo:"20 minutos",
+
+endereco:"Zona Sul"
+
 },
 
 {
+
 id:3,
-nome:"Olinda Shopping",
-cidade:"Olinda"
+
+nome:"Olinda",
+
+tempo:"18 minutos",
+
+endereco:"Shopping"
+
 },
 
 {
+
 id:4,
+
 nome:"Caruaru",
-cidade:"Caruaru"
+
+tempo:"25 minutos",
+
+endereco:"Centro"
+
 },
 
 {
+
 id:5,
+
 nome:"João Pessoa",
-cidade:"João Pessoa"
+
+tempo:"22 minutos",
+
+endereco:"Manaíra"
+
 }
 
 ];
 
 const lista=document.getElementById("listaUnidades");
 
-function carregar(listaFiltrada){
+function carregar(dados){
 
 lista.innerHTML="";
 
-listaFiltrada.forEach(u=>{
+dados.forEach(u=>{
 
 lista.innerHTML+=`
 
-<div class="card">
+<div class="unidade-card">
 
-<h3>${u.nome}</h3>
+<div>
 
-<p>${u.cidade}</p>
+<h3>📍 ${u.nome}</h3>
 
-<button class="btn"
+<p>${u.endereco}</p>
 
-onclick="selecionar(${u.id})">
+<span>Retirada em ${u.tempo}</span>
+
+</div>
+
+<button onclick="selecionar(${u.id})">
 
 Selecionar
 
@@ -68,17 +102,19 @@ carregar(unidades);
 
 document.getElementById("pesquisa")
 
-.addEventListener("keyup",(e)=>{
+.addEventListener("keyup",e=>{
 
-const valor=e.target.value.toLowerCase();
+const texto=e.target.value.toLowerCase();
 
-const filtro=unidades.filter(u=>
+carregar(
 
-u.nome.toLowerCase().includes(valor)
+unidades.filter(u=>
+
+u.nome.toLowerCase().includes(texto)
+
+)
 
 );
-
-carregar(filtro);
 
 });
 

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
 
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Pagamento</title>
 
-<link rel="stylesheet" href="css/variables.css">
 <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -17,15 +17,7 @@
 
 <header>
 
-<div class="container">
-
-<div class="logo">
-
-💳 Pagamento
-
-</div>
-
-</div>
+<h1>Pagamento</h1>
 
 </header>
 
@@ -33,38 +25,63 @@
 
 <div class="card">
 
-<h2>Escolha a forma de pagamento</h2>
+<h2>Resumo do Pedido</h2>
 
-<br>
+<div id="resumoPedido"></div>
 
-<button class="btn" onclick="pagar('PIX')">
+</div>
+
+<div class="card">
+
+<h2>Forma de Pagamento</h2>
+
+<label class="opcao">
+
+<input type="radio" name="pagamento" value="PIX" checked>
 
 PIX
 
-</button>
+</label>
 
-<br><br>
+<label class="opcao">
 
-<button class="btn" onclick="pagar('Cartão')">
+<input type="radio" name="pagamento" value="Cartão">
 
-Cartão
+Cartão de Crédito
 
-</button>
+</label>
 
-<br><br>
+<label class="opcao">
 
-<button class="btn" onclick="pagar('Vale Alimentação')">
+<input type="radio" name="pagamento" value="Vale">
 
-Vale Alimentação
+Vale-Alimentação
+
+</label>
+
+<button class="btn" onclick="finalizar()">
+
+Confirmar Pagamento
 
 </button>
 
 </div>
 
-<div id="resultado"></div>
-
 </div>
 
+<nav class="bottom-nav">
+
+<a href="cardapio.html">🍔</a>
+
+<a href="carrinho.html">🛒</a>
+
+<a class="ativo" href="pagamento.html">💳</a>
+
+<a href="perfil.html">👤</a>
+
+</nav>
+
+<script src="js/mock.js"></script>
 <script src="js/pagamento.js"></script>
 
 </body>

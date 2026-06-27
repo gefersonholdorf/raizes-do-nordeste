@@ -1,65 +1,51 @@
-function pagar(tipo){
+let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
-const area=document.getElementById("resultado");
+const resumo = document.getElementById("resumoPedido");
 
-area.innerHTML=`
+let total = 0;
 
-<div class="card">
+carrinho.forEach(id=>{
 
-<h3>Processando pagamento...</h3>
+const produto = produtos.find(p=>p.id===id);
 
-</div>
+if(produto){
 
-`;
-
-setTimeout(()=>{
-
-const aprovado=Math.random()>0.2;
-
-if(aprovado){
-
-localStorage.removeItem("carrinho");
-
-let pontos=parseInt(localStorage.getItem("pontos"))||0;
-
-pontos+=100;
-
-localStorage.setItem("pontos",pontos);
-
-area.innerHTML=`
-
-<div class="card">
-
-<h2>Pagamento aprovado ✅</h2>
-
-<p>Forma: ${tipo}</p>
-
-<a href="pedido.html" class="btn">
-
-Acompanhar Pedido
-
-</a>
-
-</div>
-
-`;
-
-}else{
-
-area.innerHTML=`
-
-<div class="card">
-
-<h2>Pagamento recusado ❌</h2>
-
-<p>Tente novamente.</p>
-
-</div>
-
-`;
+total += produto.preco;
 
 }
 
-},2000);
+});
+
+const entrega = 5;
+
+resumo.innerHTML = `
+
+<p>Subtotal <strong>R$ ${total.toFixed(2)}</strong></p>
+
+<p>Entrega <strong>R$ ${entrega.toFixed(2)}</strong></p>
+
+<hr>
+
+<h3>Total <strong>R$ ${(total+entrega).toFixed(2)}</strong></h3>
+
+`;
+
+function finalizar(){
+
+const forma = document.querySelector("input[name='pagamento']:checked").value;
+
+localStorage.setItem("pagamento",forma);
+
+localStorage.setItem("statusPedido","Pagamento aprovado");
+
+let pontos = parseInt(localStorage.getItem("pontos")) || 0;
+
+pontos += 100;
+
+localStorage.setItem("pontos",pontos);
+
+localStorage.removeItem("carrinho");
+
+window.location="pedido.html";
 
 }

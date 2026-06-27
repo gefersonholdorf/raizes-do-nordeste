@@ -9,7 +9,6 @@
 
 <title>Pedido</title>
 
-<link rel="stylesheet" href="css/variables.css">
 <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -18,15 +17,7 @@
 
 <header>
 
-<div class="container">
-
-<div class="logo">
-
-🍽️ Acompanhar Pedido
-
-</div>
-
-</div>
+<h1>Acompanhar Pedido</h1>
 
 </header>
 
@@ -34,39 +25,85 @@
 
 <div class="card">
 
-<h2 id="numeroPedido"></h2>
+<h2>Status do Pedido</h2>
 
-<p>Status do pedido</p>
+<div class="timeline">
 
-<br>
+<div class="etapa ativa">
+<div class="circulo"></div>
+<div>Pedido Recebido</div>
+</div>
 
-<div id="status">
+<div class="linha"></div>
+
+<div class="etapa ativa">
+<div class="circulo"></div>
+<div>Pagamento Aprovado</div>
+</div>
+
+<div class="linha"></div>
+
+<div class="etapa" id="preparo">
+<div class="circulo"></div>
+<div>Em Preparação</div>
+</div>
+
+<div class="linha"></div>
+
+<div class="etapa" id="retirada">
+<div class="circulo"></div>
+<div>Pronto para Retirada</div>
+</div>
 
 </div>
 
-<br>
+</div>
 
-<div class="barra">
+<div class="card">
 
-<div id="progresso"></div>
+<h2>Resumo</h2>
+
+<p>
+
+Forma de pagamento
+
+<strong id="formaPagamento"></strong>
+
+</p>
+
+<p>
+
+Situação
+
+<strong id="status"></strong>
+
+</p>
 
 </div>
 
-<br>
+<button class="btn"
 
-<p id="tempo"></p>
+onclick="window.location='cardapio.html'">
 
-<br>
+Novo Pedido
 
-<a href="fidelidade.html" class="btn">
-
-Ir para Fidelidade
-
-</a>
+</button>
 
 </div>
 
-</div>
+<nav class="bottom-nav">
+
+<a href="cardapio.html">🍔</a>
+
+<a href="carrinho.html">🛒</a>
+
+<a class="ativo" href="pedido.html">📦</a>
+
+<a href="fidelidade.html">⭐</a>
+
+<a href="perfil.html">👤</a>
+
+</nav>
 
 <script src="js/pedido.js"></script>
 

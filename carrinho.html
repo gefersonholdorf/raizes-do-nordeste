@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Carrinho</title>
 
-<link rel="stylesheet" href="css/variables.css">
 <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -14,35 +16,79 @@
 
 <header>
 
-<div class="container">
-
-<div class="logo">
-
-🛒 Carrinho
-
-</div>
-
-</div>
+<h1>🛒 Carrinho</h1>
 
 </header>
 
 <div class="container">
 
-<div id="itens"></div>
+<div id="listaCarrinho"></div>
 
-<hr><br>
+<div class="resumo">
 
-<h2 id="total">Total: R$ 0,00</h2>
+<p>
 
-<br>
+Subtotal
 
-<a href="pagamento.html" class="btn">
+<span id="subtotal">
 
-Ir para pagamento
+R$ 0,00
 
-</a>
+</span>
+
+</p>
+
+<p>
+
+Entrega
+
+<span>
+
+R$ 5,00
+
+</span>
+
+</p>
+
+<hr>
+
+<h3>
+
+Total
+
+<span id="total">
+
+R$ 0,00
+
+</span>
+
+</h3>
+
+<button class="btn"
+
+onclick="window.location='pagamento.html'">
+
+Finalizar Pedido
+
+</button>
 
 </div>
+
+</div>
+
+<nav class="bottom-nav">
+
+<a href="cardapio.html">🍔</a>
+
+<a class="ativo" href="carrinho.html">🛒</a>
+
+<a href="pedido.html">📦</a>
+
+<a href="fidelidade.html">⭐</a>
+
+<a href="perfil.html">👤</a>
+
+</nav>
 
 <script src="js/mock.js"></script>
 <script src="js/carrinho.js"></script>

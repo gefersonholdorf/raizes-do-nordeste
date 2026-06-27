@@ -1,75 +1,73 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
 
-    <title>Raízes do Nordeste</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/variables.css">
-
-    <link rel="stylesheet" href="css/style.css">
-
-    <link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
-    <header>
+<div class="login-page">
 
-        <div class="container">
+<div class="login-card">
 
-            <div class="logo">
+<div class="logo">
 
-                🌽 Raízes do Nordeste
+🌽
 
-            </div>
+<h1>Raízes do Nordeste</h1>
 
-        </div>
+<p>Faça login para continuar</p>
 
-    </header>
+</div>
 
-    <div class="container">
+<form id="loginForm">
 
-        <br>
+<input
+type="email"
+id="email"
+placeholder="E-mail"
+required>
 
-        <h1>
+<input
+type="password"
+id="senha"
+placeholder="Senha"
+required>
 
-            Bem-vindo!
+<button class="btn">
 
-        </h1>
+Entrar
 
-        <br>
+</button>
 
-        <p>
+</form>
 
-            Sabores do Nordeste na palma da sua mão.
+<div class="links">
 
-        </p>
+<a href="cadastro.html">
 
-        <br>
+Criar uma conta
 
-        <a href="login.html" class="btn">
+</a>
 
-            Entrar
+</div>
 
-        </a>
+</div>
 
-        <br><br>
+</div>
 
-        <a href="cadastro.html" class="btn">
-
-            Criar Conta
-
-        </a>
-
-    </div>
-
-    <script src="js/app.js"></script>
+<script src="js/auth.js"></script>
 
 </body>
 

@@ -1,34 +1,48 @@
 const area=document.getElementById("produtos");
 
+let carrinho=JSON.parse(localStorage.getItem("carrinho"))||[];
+
+function atualizarCarrinho(){
+
+document.getElementById("qtdCarrinho").innerHTML=carrinho.length;
+
+}
+
 function listar(lista){
 
 area.innerHTML="";
 
-lista.forEach(p=>{
+lista.forEach(produto=>{
 
 area.innerHTML+=`
 
-<div class="card">
+<div class="produto">
 
-<h3>${p.nome}</h3>
+<div class="foto">
 
-<p>${p.categoria}</p>
+${produto.imagem}
 
-<h2>
+</div>
 
-R$ ${p.preco.toFixed(2)}
+<h3>${produto.nome}</h3>
 
-</h2>
+<p>${produto.categoria}</p>
 
-<button
+<div class="rodape-card">
 
-class="btn"
+<strong>
 
-onclick="comprar(${p.id})">
+R$ ${produto.preco.toFixed(2)}
 
-Adicionar
+</strong>
+
+<button onclick="comprar(${produto.id})">
+
++
 
 </button>
+
+</div>
 
 </div>
 
@@ -40,21 +54,19 @@ Adicionar
 
 listar(produtos);
 
-document
+atualizarCarrinho();
 
-.getElementById("buscar")
+document.getElementById("buscar")
 
-.addEventListener("keyup",(e)=>{
+.addEventListener("keyup",e=>{
 
-const txt=e.target.value.toLowerCase();
+const texto=e.target.value.toLowerCase();
 
 listar(
 
 produtos.filter(p=>
 
-p.nome.toLowerCase()
-
-.includes(txt)
+p.nome.toLowerCase().includes(texto)
 
 )
 
@@ -64,20 +76,10 @@ p.nome.toLowerCase()
 
 function comprar(id){
 
-let carrinho=
-
-JSON.parse(localStorage.getItem("carrinho"))||[];
-
 carrinho.push(id);
 
-localStorage.setItem(
+localStorage.setItem("carrinho",JSON.stringify(carrinho));
 
-"carrinho",
-
-JSON.stringify(carrinho)
-
-);
-
-alert("Produto adicionado!");
+atualizarCarrinho();
 
 }
