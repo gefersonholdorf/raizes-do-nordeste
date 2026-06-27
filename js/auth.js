@@ -14,21 +14,21 @@ if (cadastroForm) {
 
             nome: document.getElementById("nome").value,
 
-            email: document.getElementById("emailCadastro").value,
+            email: document.getElementById("email").value,
 
             telefone: document.getElementById("telefone").value,
 
             cpf: document.getElementById("cpf").value,
 
-            senha: document.getElementById("senhaCadastro").value
+            senha: document.getElementById("senha").value
 
-        }
+        };
 
         localStorage.setItem("usuario", JSON.stringify(usuario));
 
         alert("Cadastro realizado com sucesso!");
 
-        window.location = "login.html";
+        window.location.href = "login.html";
 
     });
 
