@@ -1,0 +1,1 @@
+console.log("Projeto Raízes do Nordeste iniciado.");
